@@ -32,12 +32,17 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //Function to display the custom dialog.
     void showCustomDialog() {
         final Dialog dialog = new Dialog(MainActivity.this);
+        //We have added a title in the custom layout. So let's disable the default title.
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //The user will be able to cancel the dialog bu clicking anywhere outside the dialog.
         dialog.setCancelable(true);
+        //Mention the name of the layout of your custom dialog.
         dialog.setContentView(R.layout.custom_dialog);
 
+        //Initializing the views of the dialog.
         final EditText nameEt = dialog.findViewById(R.id.name_et);
         final EditText ageEt = dialog.findViewById(R.id.age_et);
         final CheckBox termsCb = dialog.findViewById(R.id.terms_cb);
